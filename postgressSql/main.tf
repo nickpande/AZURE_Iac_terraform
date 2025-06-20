@@ -50,7 +50,7 @@ resource "azurerm_postgresql_flexible_server" "postgres" {
     password_auth_enabled         = true
   }
 }
-
+`
 resource "azurerm_postgresql_flexible_server_database" "db" {
   name      = "appdb"
   server_id = azurerm_postgresql_flexible_server.postgres.id
