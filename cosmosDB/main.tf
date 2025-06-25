@@ -12,3 +12,4 @@ resource "azurerm_resource_group" "rg" {
 resource "azurerm_cosmosdb_account" "cosmos" {
   name                = "cosmosdbdemoacct123"
   location            =
+}
