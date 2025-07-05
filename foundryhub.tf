@@ -14,3 +14,14 @@ resource "azurerm_virtual_network_peering" "spoke1-to-hub" {
   allow_gateway_transit     = false
   use_remote_gateways       = false
 }
+
+resource "azurerm_virtual_network" "hub" {
+  name                = "hub-vnet"
+  location            = var.location
+  resource_group_name = var.resource_group
+  address_space       = ["10.0.0.0/16"]
+}
+
+output "hub_vnet_id" {
+  value = azurerm_virtual_network.hub.id
+}
